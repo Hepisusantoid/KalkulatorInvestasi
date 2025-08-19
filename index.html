@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Investasi Modern</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Investasi</h1>
+        
+        <div class="input-section">
+            <div class="input-group">
+                <label for="current_money">💰 Uang Tersedia Saat Ini (Rp)</label>
+                <input type="text" id="current_money" value="0" placeholder="Masukkan jumlah uang tersedia">
+            </div>
+            
+            <div class="input-group">
+                <label for="investment_amount">📈 Jumlah Investasi (Rp)</label>
+                <input type="text" id="investment_amount" value="0" placeholder="Masukkan jumlah investasi">
+            </div>
+            
+            <div class="input-group">
+                <label for="investment_frequency">🔄 Frekuensi Investasi</label>
+                <select id="investment_frequency">
+                    <option value="once">Sekali</option>
+                    <option value="weekly">Mingguan</option>
+                    <option value="monthly">Bulanan</option>
+                    <option value="semiannually">Enam Bulanan</option>
+                    <option value="annually">Tahunan</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="investment_period">⏰ Jangka Waktu (Tahun)</label>
+                <input type="number" id="investment_period" value="1" min="1" max="50" placeholder="Masukkan jangka waktu">
+            </div>
+            
+            <div class="input-group">
+                <label for="annual_interest">💹 Bunga Tahunan (%)</label>
+                <input type="number" id="annual_interest" value="5" min="0" max="100" step="0.1" placeholder="Masukkan tingkat bunga">
+            </div>
+            
+            <button id="calculate_button">
+                🚀 Hitung Investasi
+            </button>
+            
+            <div class="results">
+                <h2>📊 Hasil Investasi</h2>
+                <p>Total Investasi: <span id="total_investment">Rp 0</span></p>
+                <p>Total Bunga: <span id="total_interest">Rp 0</span></p>
+                <p>Total Akhir: <span id="final_amount">Rp 0</span></p>
+                <div class="percentage-highlight">
+                    <p style="margin: 0;">Selisih Persentase: <span id="percentage_difference">0%</span></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-section">
+            <div class="chart-container">
+                <canvas id="investmentChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
